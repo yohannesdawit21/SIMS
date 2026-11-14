@@ -27,11 +27,12 @@ process.on('unhandledRejection', (reason: any) => {
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // CORS — allow Netlify frontend and local dev
+  // CORS — allow Vercel, Netlify frontend and local dev
   app.enableCors({
     origin: [
       'http://localhost:5173',
       'http://localhost:80',
+      /\.vercel\.app$/,
       /\.netlify\.app$/,
       /\.netlify\.live$/,
       process.env.FRONTEND_URL ?? '',
