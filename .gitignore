@@ -1,0 +1,36 @@
+# Environment files - NEVER commit real secrets
+.env
+.env.local
+# .env.production is committed intentionally (contains only public API URL)
+
+# Node
+node_modules/
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build artifacts
+frontend/dist/
+backend/dist/
+
+# Docker volumes
+pgdata/
+miniodata/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/settings.json
+*.suo
+*.user
+
+# Temp deployment scripts (contain passwords)
+create-superadmin.js
+create-test-users.js
+create-student-profile.js
+run-supabase-migration.js
+RAILWAY_ENV_VARS.txt

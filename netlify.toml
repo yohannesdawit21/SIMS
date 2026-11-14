@@ -1,0 +1,14 @@
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build]
+  base = "frontend"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+  # VITE_API_URL is set in Netlify dashboard → Site settings → Environment variables
+  # Set it to: https://YOUR-RENDER-APP.onrender.com/api/v1
